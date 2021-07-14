@@ -1,0 +1,224 @@
+/* Bismillohir Rahmonir Rahiym */
+@font-face {
+  font-family: "Ibarra Real Nova";
+  src: url("../fonts/IbarraRealNova-Regular.woff2") format("woff2"), url("../fonts/IbarraRealNova-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ibarra Real Nova";
+  src: url("../fonts/IbarraRealNova-Bold.woff2") format("woff2"), url("../fonts/IbarraRealNova-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  src: url("../fonts/PublicSans-Regular.woff2") format("woff2"), url("../fonts/PublicSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Public Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  color: rgba(51, 50, 61, 0.8);
+  background-color: #fafafa;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* SITE-HEADER */
+.site-header {
+  position: relative;
+  overflow-x: clip;
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+.site-header--action .sitenav--mobile {
+  -webkit-transform: initial;
+          transform: initial;
+}
+
+.site-header--action .menu-toggle {
+  background-image: url("../img/icon-close.svg");
+}
+
+.site-header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo img {
+  display: block;
+}
+
+.sitenav {
+  display: none;
+}
+
+.sitenav--mobile {
+  display: block;
+  position: absolute;
+  top: 88px;
+  right: 32px;
+  z-index: 10;
+  -webkit-transform: translateX(calc(100% + 32px));
+          transform: translateX(calc(100% + 32px));
+  width: 223px;
+  padding: 40px 0;
+  text-align: center;
+  background-color: #33323d;
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+}
+
+.sitenav--mobile .sitenav__item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.sitenav--mobile .sitenav__link {
+  color: #fff;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.sitenav--mobile .sitenav__link:active {
+  opacity: 0.6;
+}
+
+.sitenav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sitenav__link {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu-toggle {
+  width: 24px;
+  height: 13px;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("../img/icon-menu.svg");
+  border: none;
+  outline: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media screen and (min-width: 500px) {
+  .site-header {
+    padding-top: 64px;
+    padding-bottom: 47px;
+  }
+  .sitenav {
+    display: block;
+  }
+  .sitenav--mobile,
+  .menu-toggle {
+    display: none;
+  }
+  .sitenav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .sitenav__item:not(:last-child) {
+    margin-right: 42px;
+  }
+  .sitenav__item--active .sitenav__link {
+    color: #5fb4a2;
+  }
+  .sitenav__link {
+    color: #33323d;
+    -webkit-transition: color 0.3s ease, opacity 0.3s ease;
+    transition: color 0.3s ease, opacity 0.3s ease;
+  }
+  .sitenav__link:hover {
+    color: #5fb4a2;
+  }
+  .sitenav__link:active {
+    opacity: 0.6;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .site-header {
+    padding-bottom: 54px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

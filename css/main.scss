@@ -1,0 +1,256 @@
+/* Bismillohir Rahmonir Rahiym */
+
+// VARIABLES
+
+$color-text-primary: #33323d;
+$color-text-secondary: rgba(51, 50, 61, 0.8);
+$color-grey-light: #5fb4a2;
+$media-breakpoint-tablet: 600px;
+$media-breakpoint-tablet-small: 500px;
+$media-breakpoint-desktop: 1024px;
+
+// FONTS
+
+@font-face {
+  font-family: "Ibarra Real Nova";
+  src: url("../fonts/IbarraRealNova-Regular.woff2") format("woff2"),
+    url("../fonts/IbarraRealNova-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ibarra Real Nova";
+  src: url("../fonts/IbarraRealNova-Bold.woff2") format("woff2"),
+    url("../fonts/IbarraRealNova-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  src: url("../fonts/PublicSans-Regular.woff2") format("woff2"),
+    url("../fonts/PublicSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// BASIC STYLES
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Public Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  color: $color-text-secondary;
+  background-color: #fafafa;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// SPECIAL CLASSES
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media screen and (min-width: $media-breakpoint-tablet) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (min-width: $media-breakpoint-desktop) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+// MIXINS
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin bg-full {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* SITE-HEADER */
+
+.site-header {
+  position: relative;
+  overflow-x: clip;
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+.site-header--action {
+  .sitenav--mobile {
+    transform: initial;
+  }
+
+  .menu-toggle {
+    background-image: url("../img/icon-close.svg");
+  }
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  display: block;
+}
+
+.sitenav {
+  display: none;
+}
+
+.sitenav--mobile {
+  display: block;
+  position: absolute;
+  top: 88px;
+  right: 32px;
+  z-index: 10;
+  transform: translateX(calc(100% + 32px));
+  width: 223px;
+  padding: 40px 0;
+  text-align: center;
+  background-color: $color-text-primary;
+  transition: transform 0.4s ease;
+
+  .sitenav__item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  .sitenav__link {
+    color: #fff;
+    transition: opacity 0.3s ease;
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+.sitenav__list {
+  @include list-reset;
+}
+
+.sitenav__link {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu-toggle {
+  width: 24px;
+  height: 13px;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("../img/icon-menu.svg");
+  border: none;
+  outline: none;
+
+  @include bg-full;
+}
+
+// TABLET
+
+@media screen and (min-width: $media-breakpoint-tablet-small) {
+  // TABLET
+
+  .site-header {
+    padding-top: 64px;
+    padding-bottom: 47px;
+  }
+
+  .sitenav {
+    display: block;
+  }
+
+  .sitenav--mobile,
+  .menu-toggle {
+    display: none;
+  }
+
+  .sitenav__list {
+    display: flex;
+  }
+
+  .sitenav__item {
+    &:not(:last-child) {
+      margin-right: 42px;
+    }
+
+    &--active .sitenav__link {
+      color: #5fb4a2;
+    }
+  }
+
+  .sitenav__link {
+    color: #33323d;
+    transition: color 0.3s ease, opacity 0.3s ease;
+
+    &:hover {
+      color: #5fb4a2;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+// DESKTOP
+
+@media screen and (min-width: $media-breakpoint-desktop) {
+  // SITE-HEADER
+
+  .site-header {
+    padding-bottom: 54px;
+  }
+}
